@@ -2,7 +2,7 @@ services:
 
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: etmp-sqlserver
+    container_name: project-management-etmp-sqlserver
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
@@ -11,9 +11,9 @@ services:
 
   api:
     image: yousaf007/etmp-api:latest
-    container_name: etmp-api
+    container_name: project-management-etmp-api
     ports:
-      - "8080:8080"
+      - "8085:8080"
     environment:
       ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=EnterpriseTaskManagementDb;User Id=sa;Password=${MSSQL_SA_PASSWORD};TrustServerCertificate=True;"
       Jwt__Key: ${JWT_KEY}

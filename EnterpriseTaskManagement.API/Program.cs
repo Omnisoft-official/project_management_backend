@@ -106,7 +106,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(
+                  "http://localhost:5173",
+                  "https://projectmanagementfrontend.omnisoft.info"
+                  )
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials());

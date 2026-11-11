@@ -374,7 +374,7 @@ appsettings.Development.json
 
 # Docker local overrides
 docker-compose.override.yml
-
+docker-compose-vps.yaml
 # Local Docker / deployment files
 *.local.yml
 
